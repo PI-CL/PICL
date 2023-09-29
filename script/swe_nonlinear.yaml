@@ -1,0 +1,14 @@
+data:
+  name: 'SWE_Nonlinear-0000'
+  total_num: 1
+  n_train: 45
+  n_test: 5
+  nx: 32
+  nt: 50
+  sub: 1
+  sub_t: 1
+  nin: 1
+  nout: 3
+  g: 1.0
+  H: 1
+  nu: 0.1

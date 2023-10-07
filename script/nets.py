@@ -156,45 +156,6 @@ class MyDataset(Dataset):
     def __getitem__(self, index):
         return self.data_tensor[index], self.target_tensor[index]
 
-
-def data_repeat(data, num_obs, num_state, gap):
-    
-    data_run = data
-
-    num = data_run.shape[1]
-    data_run = data_run
-
-    u_sum = torch.zeros((data_run.shape[2],num,num_state,num_state), dtype=torch.float64)
-    v_sum = torch.zeros((data_run.shape[2],num,num_state,num_state), dtype=torch.float64)
-    h_sum = torch.zeros((data_run.shape[2],num,num_state,num_state), dtype=torch.float64)
-
-    for uvh in range(data_run.shape[0]):  
-        for t in range(data_run.shape[2]): 
-
-            u_m = torch.zeros((num,num_obs,num_obs), dtype=torch.float64)
-            
-            for i in range(u_m.shape[1]):
-                u_m[:,i] = data_run[uvh,:,t,i*u_m.shape[1]:i*u_m.shape[1] + u_m.shape[2]]
-
-            u_s = torch.zeros((num,num_state,num_state), dtype=torch.float64)
-
-            for i in range(u_s.shape[1]):
-                if i%gap == 0:
-                    for z in range(u_s.shape[2]):
-                        if z%gap == 0:
-                            u_s[:,i,z] = u_m[:, int(i/gap), int(z/gap)]
-            
-            if uvh == 0:
-                u_sum[t] = u_s
-            elif uvh == 1:
-                v_sum[t] = u_s
-            elif uvh == 2:
-                h_sum[t] = u_s
-
-    sum = torch.stack((u_sum, v_sum, h_sum), 0)
-
-    return sum
-
 def data_arrange(data_path):
     data_run = torch.load(data_path)
     u_sum = []

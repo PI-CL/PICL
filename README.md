@@ -1,4 +1,4 @@
-# PICL: Learning to Incorporate Physical Information when Facing Coarse-Grained Data
+# PICL: Learning to Incorporate Physical Information When Only Coarse-Grained Data is Available
 
 ## Official Implementation
 

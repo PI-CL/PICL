@@ -2,7 +2,7 @@
 
 ## Official Implementation
 
-This repository is the official implementation of "PICL: Learning to Incorporate Physical Information when Facing Coarse-Grained Data". 
+This repository is the official implementation of "PICL: Learning to Incorporate Physical Information When Only Coarse-Grained Data is Available". 
 
 ## Introduction
 

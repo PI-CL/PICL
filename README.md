@@ -2,13 +2,13 @@
 
 ## Official Implementation
 
-The repository is the official implementation of "PICL: Learning to Incorporate Physical Information When Only Coarse-Grained Data is Available". 
+This repository is the official implementation of "PICL: Learning to Incorporate Physical Information When Only Coarse-Grained Data is Available". 
 
 ## Introduction
 
 We introduce the Physics-Informed Coarse-grained data Learning (PICL) framework. The key innovation of PICL is the reconstruction of a learnable fine-grained state using only physical information. This approach enables the applicability of physics-based loss and significantly enhances the model's generalization capacity for predicting future coarse-grained observations. PICL combines an encoding module for reconstructing learnable fine-grained states with a transition module for predicting future states. This unique approach seamlessly blends data-driven and physics-informed techniques, especially useful when only limited coarse-grained data is available.
 
-![PICL. Base-training period (left): the encoding module is trained with a physics loss without available fine-grained data, and the transition module is trained with a combination of data loss and physics loss. Inference Period (right): given a coarse-grained observation to predict the future coarse-grained observations.](pipeline.png)
+![PICL. Base-training period (left): the encoding module is trained with a physics loss without available fine-grained data, and the transition module is trained with a combination of data loss and physics loss. Inference Period (right): given a coarse-grained observation to predict the future coarse-grained observations.](train_pipeline.png)
 
 ## Experiment
 

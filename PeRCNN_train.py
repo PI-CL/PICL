@@ -700,9 +700,9 @@ class MyDataset(Dataset):
 def get_args(argv=None):
     parser = argparse.ArgumentParser(description = 'Put your hyperparameters')
 
-    parser.add_argument('-dp', '--data_path', default='dt_0.01_fr_1.0', type=str, help='data path name')
-    parser.add_argument('-lf', '--logs_fname', default='new_physics_8', type=str, help='logs file name')
-    parser.add_argument('-dc', '--dict', default='nse', type=str, help='dict name')
+    parser.add_argument('-dp', '--data_path', default='PICL', type=str, help='data path name')
+    parser.add_argument('-lf', '--logs_fname', default='nswe', type=str, help='logs file name')
+    parser.add_argument('-dc', '--dict', default='nswe', type=str, help='dict name')
     parser.add_argument('-dr', '--data_rate', default=1, type=float, help='logs file name')
     
     parser.add_argument('-L', '--L', default=4, type=int, help='the number of layers')
